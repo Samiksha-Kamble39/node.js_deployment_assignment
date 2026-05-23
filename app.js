@@ -111,7 +111,7 @@ app.get('/', (req, res) => {
 
     <div class="container">
       <h1>
-        This is CI/CD Deployment <br>
+        CI/CD Deployment <br>
         using <span>Node.js</span><br>
         by <span>Samiksha Kamble</span>
       </h1>
