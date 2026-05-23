@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'slave' }
 
     environment {
         IMAGE_NAME = "samikshakamble39/my-app"
@@ -15,12 +15,10 @@ pipeline {
         }
 
         stage('Build Docker Image') {
-            steps {
-                script {
-                    docker.build("${IMAGE_NAME}:latest")
-                }
-            }
-        }
+           steps {
+               sh '/usr/bin/docker build -t samikshakamble39/my-app:latest .'
+           }
+        } 
 
         stage('Push Docker Image') {
             steps {
